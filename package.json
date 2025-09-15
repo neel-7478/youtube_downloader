@@ -1,0 +1,14 @@
+{
+  "name": "youtube_downloader",
+  "version": "1.0.0",
+  "description": "Web-based Node.js application to download YouTube videos at highest quality",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@distube/ytdl-core": "^4.13.4",
+    "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}

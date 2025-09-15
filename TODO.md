@@ -1,0 +1,7 @@
+- [x] Change server route from POST to GET for /download
+- [x] Update server to parse from req.query instead of req.body
+- [x] Update client fetch to use GET with query parameters
+- [ ] Deploy backend to a server (e.g., Heroku, Vercel) and update frontend fetch URLs to point to deployed backend
+- [ ] Add CORS to backend for cross-origin requests
+- [ ] Test the application locally
+- [ ] Test the application on hosted site after deployment
