@@ -229,7 +229,7 @@
       progressContainer.style.display = 'block';
 
       try {
-        const response = await fetch('https://your-backend-url/download?' + new URLSearchParams({ url, quality, type, id }).toString());
+        const response = await fetch('/download?' + new URLSearchParams({ url, quality, type, id }).toString());
 
         if (!response.ok) {
           const errorText = await response.text();
@@ -241,14 +241,14 @@
 
         const pollProgress = setInterval(async () => {
           try {
-            const res = await fetch(`https://your-backend-url/progress?id=${id}`);
+            const res = await fetch(`/progress?id=${id}`);
             const progress = await res.json();
 
             if (progress.status === 'complete') {
               clearInterval(pollProgress);
               progressText.textContent = 'Download ready. Fetching file...';
 
-              const downloadRes = await fetch(`https://your-backend-url/downloadfile?id=${id}`);
+              const downloadRes = await fetch(`/downloadfile?id=${id}`);
               if (downloadRes.ok) {
                 const blob = await downloadRes.blob();
                 const contentDisposition = downloadRes.headers.get('Content-Disposition');
